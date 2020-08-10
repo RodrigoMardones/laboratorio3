@@ -1,0 +1,11 @@
+---
+title: "Laboratorio 3"
+author: "Rodrigo Mardones Aguilar"
+date: "8/10/2020"
+output: pdf_document
+---
+
+
+
+
+
