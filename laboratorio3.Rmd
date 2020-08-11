@@ -1,10 +1,88 @@
 ---
-title: "Laboratorio 3"
+title: "Laboratorio 3: Paradigma Orientado A Objetos"
 author: "Rodrigo Mardones Aguilar"
 date: "8/10/2020"
 output: pdf_document
+fontsize: 12pt
+geometry: margin=1in
 ---
 
+
+\newpage 
+
+# Indice
+
+1. Introduccion.
+2. Descripcion del problema.
+3. Descripción del paradigma.
+4. Análisis del problema.
+5. Diseño de la solución.
+6. Aspectos de la implementación.
+7. Instrucciones de uso.
+7. Resultados y Autoevalución.
+8. Conclusiones.
+9. Referencias.
+
+
+\newpage 
+
+# Introducción
+
+Los Paradigmas de programación son modelos o patrones de trabajo, los cuales nos permiten resolver problemas abordando de distintas manera la ejecución de la solución.
+
+Es preciso señalar que indiferente de los lenguajes nuevos, modernos y sus herramnientas propias asociadas, siempre se regirán por al menos uno o más paradigmas de programación. Pues son estos quienes nos permiten analizar de buena manera 
+
+
+### Objectivo General
+
+Para este laboratorio n°3 se pretende construir una pieza de software que permita simular un "controlador de versiones" tipo git, utilizando como requerimiento base el paradigma orientado a objetos y las caracteristicas que rigen a este paradigma. 
+
+### Objectivos Específicos
+
+Para abordar el problema se plantean lo siguientes objectivos especificos
+
+* Diseño de la solución.
+* Aspectos de la implementación.
+* Instrucciones de uso.
+* Resultados y Autoevalución.
+* Conclusiones.
+
+
+\newpage
+
+# Descripción del problema
+
+\newpage
+
+# Descripción del paradigma
+
+\newpage
+
+# Analisis del problema
+
+\newpage
+
+# Diseño de solución
+
+\newpage
+
+# Aspectos de la implementación
+
+\newpage
+
+# Instrucciones de uso
+
+\newpage
+
+# Resultados y Autoevaluacion
+
+\newpage
+
+# Conclusiones
+
+\newpage
+
+# Referencias
 
 
 
