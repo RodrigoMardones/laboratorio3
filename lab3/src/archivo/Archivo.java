@@ -1,5 +1,5 @@
 package archivo;
-import archivo.IArchivo;
+
 import java.util.Date;
 
 public class Archivo implements IArchivo{
@@ -36,5 +36,10 @@ public class Archivo implements IArchivo{
     @Override
     public String getNombre() {
         return this.nombre;
+    }
+
+    @Override
+    public void setNombre(String name) {
+        this.nombre = name;
     }
 }
