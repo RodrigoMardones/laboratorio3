@@ -1,18 +1,22 @@
-package indexzone;
+package workingzone;
 
 import java.util.ArrayList;
 import java.util.List;
 import archivo.Archivo;
 
-public class IndexZone implements IIndexZone {
+public class WorkingZone implements IWorkingZone {
     private List<Archivo> index;
     
-    IndexZone(){
+    public WorkingZone(){
         this.index = new ArrayList<Archivo>();
     }
+    
+    void addFile(Archivo file){
+        this.index.add(file);
+    }
+    
+    void addFile(List<Archivo> files){
 
-    void addFile(Archivo A){
-        this.index.add(A);
     }
 
     List<Archivo> getIndexZone(){

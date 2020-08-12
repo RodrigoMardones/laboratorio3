@@ -8,7 +8,7 @@ public class RepoZone implements IRepoZone {
     public String nameRepo;
     public List<Commit> repo;
 
-    RepoZone(String newNameRepo){
+    public RepoZone(String newNameRepo){
         this.nameRepo = newNameRepo;
         this.repo = new ArrayList<Commit>();
     }
