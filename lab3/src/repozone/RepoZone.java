@@ -1,14 +1,14 @@
-package repository;
+package repozone;
 
 import java.util.List;
 import java.util.ArrayList;
 import commit.Commit;
 
-public class Repository implements IRepository {
+public class RepoZone implements IRepoZone {
     public String nameRepo;
     public List<Commit> repo;
 
-    Repository(String newNameRepo){
+    RepoZone(String newNameRepo){
         this.nameRepo = newNameRepo;
         this.repo = new ArrayList<Commit>();
     }
