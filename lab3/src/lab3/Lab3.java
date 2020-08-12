@@ -5,6 +5,9 @@
  */
 package lab3;
 
+import archivo.Archivo;
+import repository.Repository;
+
 /**
  *
  * @author rodrigomardones
@@ -16,7 +19,18 @@ public class Lab3 {
      */
     public static void main(String[] args) {
 
-        System.out.println("hello friend... this is a test");
+        Repository git = new Repository();
+        Archivo a1 = new Archivo("saludo.txt", "esto es un saludo contenido dentro del archivo");
+        Archivo a2 = new Archivo("saludo2.txt", "esto es un saludo contenido dentro del archivo");
+        Archivo a3 = new Archivo("saludo3.txt", "esto es un saludo contenido dentro del archivo");
+
+        git.gitInit("master");
+        git.addFileToworkingDirectory(a1);
+        git.addFileToworkingDirectory(a2);
+        git.addFileToworkingDirectory(a3);
+        git.gitStatus();
+        
+
     }
     
 }

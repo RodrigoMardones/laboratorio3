@@ -5,26 +5,26 @@ import java.util.List;
 import archivo.Archivo;
 
 public class WorkingZone implements IWorkingZone {
-    private List<Archivo> index;
+    private List<Archivo> files;
     
     public WorkingZone(){
-        this.index = new ArrayList<Archivo>();
+        this.files = new ArrayList<Archivo>();
     }
     
-    void addFile(Archivo file){
-        this.index.add(file);
+    public void addFile(Archivo file){
+        this.files.add(file);
     }
     
-    void addFile(List<Archivo> files){
-
+    public void addFile(List<Archivo> files){
+        // do nothing for now
     }
 
-    List<Archivo> getIndexZone(){
-        return this.index;
+    public List<Archivo> getFilesZone(){
+        return this.files;
     }
 
-    void clearZone(){
-        this.index.clear();
+    public void clearZone(){
+        this.files.clear();
     }
 
 

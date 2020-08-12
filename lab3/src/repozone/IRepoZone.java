@@ -6,6 +6,6 @@ import commit.Commit;
 
 
 public interface IRepoZone {
-    String nombreRepo = "";
+
     List<Commit> repo = new ArrayList<Commit>();
 }

@@ -7,10 +7,10 @@ public class Archivo implements IArchivo{
     String contenido;
     Date fecha;
 
-    Archivo(String nombre, String contenido, Date fecha ){
+    public Archivo(String nombre, String contenido){
         this.nombre = nombre;
         this.contenido = contenido;
-        this.fecha = fecha;
+        this.fecha = new Date();
     }
 
     @Override
