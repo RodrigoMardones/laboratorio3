@@ -29,8 +29,10 @@ public class Lab3 {
         git.addFileToworkingDirectory(a2);
         git.addFileToworkingDirectory(a3);
         git.gitStatus();
-        
+        git.gitAdd();
 
+        System.out.println("\n");
+        git.gitStatus();
     }
     
 }

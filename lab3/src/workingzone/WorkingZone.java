@@ -11,12 +11,14 @@ public class WorkingZone implements IWorkingZone {
         this.files = new ArrayList<Archivo>();
     }
     
-    public void addFile(Archivo file){
+    public void add(Archivo file){
         this.files.add(file);
+
     }
     
-    public void addFile(List<Archivo> files){
+    public void add(List<Archivo> files){
         // do nothing for now
+        this.files.addAll(files);
     }
 
     public List<Archivo> getFilesZone(){

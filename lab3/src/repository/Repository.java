@@ -28,8 +28,8 @@ public class Repository implements IRepository {
 
     @Override
     public void gitAdd() {
-        // TODO Auto-generated method stub
-
+        this.indexZone.add( this.workingDirectory.getFilesZone() );
+        this.workingDirectory.clearZone();
     }
 
     @Override
@@ -54,12 +54,19 @@ public class Repository implements IRepository {
     public void gitStatus() {
         // tes para revisar estado de working directory
         List<Archivo> workinfiles = this.workingDirectory.getFilesZone();
+        System.out.println("----workingDirectory files----");
         for(int i = 0; i < workinfiles.size() ;i++){
             System.out.println(workinfiles.get(i).nombre);
         }
+        System.out.println("----Index files----");
+        List<Archivo> indexfiles = this.indexZone.getFilesZone();
+        for(int i = 0; i < indexfiles.size() ;i++){
+            System.out.println(indexfiles.get(i).nombre);
+        }
+        System.out.println("----end----");
     }
     @Override
     public void addFileToworkingDirectory(Archivo file){
-        this.workingDirectory.addFile(file);
+        this.workingDirectory.add(file);
     }
 }
