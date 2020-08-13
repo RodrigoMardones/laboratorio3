@@ -2,7 +2,8 @@
 
 Para el correcto uso de este programa se recomiendo tener:
 
-- java: version >= 1.8.0
+- java: version == 8.0
+- jdk: version >= 1.8.0
 
-Todo el codigo fuente de este laboratorio se encuentra en el directorio "src". 
+El programa principal se encuentra en la carpeta lab3, la que a su vez contiene otra carpeta denominada "src". donde se encuentran todos los paquetes que componen el proyecto. 
 
