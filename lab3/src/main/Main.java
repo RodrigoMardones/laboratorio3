@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lab3;
+package main;
 
 import java.util.Scanner;
 
@@ -14,7 +14,7 @@ import repository.Repository;
  *
  * @author rodrigomardones
  */
-public class Lab3 {
+public class Main {
 
     /**
      * @param args the command line arguments
@@ -84,9 +84,7 @@ public class Lab3 {
                     System.out.println("opcion no implementada");
                     break;
             }
-
         } while (true);
-
     }
 
 }
