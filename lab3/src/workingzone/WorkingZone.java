@@ -13,18 +13,14 @@ public class WorkingZone implements IWorkingZone {
     
     public void add(Archivo file){
         this.files.add(file);
-
     }
-    
     public void add(List<Archivo> files){
-        // do nothing for now
         this.files.addAll(files);
     }
 
     public List<Archivo> getFilesZone(){
         return this.files;
     }
-
     public void clearZone(){
         this.files.clear();
     }

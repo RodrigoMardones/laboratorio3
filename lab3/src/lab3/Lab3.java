@@ -28,11 +28,16 @@ public class Lab3 {
         git.addFileToworkingDirectory(a1);
         git.addFileToworkingDirectory(a2);
         git.addFileToworkingDirectory(a3);
+        
         git.gitStatus();
         git.gitAdd();
 
         System.out.println("\n");
         git.gitStatus();
+        git.gitCommit("first Commit ! by Rodrigo Mardones");
+        System.out.println("\n");
+        git.gitStatus();
+
     }
     
 }

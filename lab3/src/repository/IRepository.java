@@ -14,7 +14,7 @@ public interface IRepository {
 
     void gitInit(String repoName);
     void gitAdd();
-    void gitCommit();
+    void gitCommit(String message);
     void gitPush();
     void gitPull();
     void gitStatus();
