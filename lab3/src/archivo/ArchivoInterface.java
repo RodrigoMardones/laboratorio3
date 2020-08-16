@@ -1,7 +1,7 @@
 package archivo;
 import java.util.Date;
 
-public interface IArchivo {
+public interface ArchivoInterface {
     // attrs
     String nombre = "";
     Date fecha = new Date();

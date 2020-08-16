@@ -2,7 +2,7 @@ package archivo;
 
 import java.util.Date;
 
-public class Archivo implements IArchivo{
+public class Archivo implements ArchivoInterface{
     public String nombre;
     String contenido;
     Date fecha;

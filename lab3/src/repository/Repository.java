@@ -6,7 +6,7 @@ import commit.Commit;
 import repozone.RepoZone;
 import workingzone.WorkingZone;
 
-public class Repository implements IRepository {
+public class Repository implements RepositoryInterface{
 
     String repoName;
     WorkingZone workingDirectory;
@@ -24,14 +24,13 @@ public class Repository implements IRepository {
 
     public void gitInit(String newRepoName) {
         this.repoName = newRepoName;
-        
     }
 
     @Override
     public void gitAdd() {
         List<Archivo> workingFiles = this.workingDirectory.getFilesZone();
         if(workingFiles.size() == 0){
-            System.out.println("no hay archivos para agregar");
+            System.out.println("no hay archivos para agregar \n");
             return;
         }
         this.indexZone.add( workingFiles );
@@ -40,20 +39,28 @@ public class Repository implements IRepository {
 
     @Override
     public void gitCommit(String message) {
-
+        if(this.workingDirectory.getFilesZone().size() > 0){
+            System.out.println("hay cambios no confirmados !");
+            return;
+        }
         List <Archivo> indexFiles = this.indexZone.getFilesZone();
         if(indexFiles.size() == 0){
             System.out.println("no hay cambios para crear un commit");
             return;
         }
-        Commit newCommit = new Commit(message, this.indexZone.getFilesZone());
+        Commit newCommit = new Commit(message, indexFiles);
         this.localRepo.add(newCommit);
         this.indexZone.clearZone();
     }
 
     @Override
-    public void gitPush() {
-        // TODO Auto-generated method stub
+    public void gitPush() {        
+        //revisar si remote está vacia
+        if(this.remoteRepo.getCommits().size() == 0){
+            this.remoteRepo.add(this.localRepo.getCommits());
+        }else{
+            
+        }
 
     }
 
@@ -71,17 +78,20 @@ public class Repository implements IRepository {
         for(int i = 0; i < workinfiles.size() ;i++){
             System.out.println(workinfiles.get(i).nombre);
         }
+        System.out.println("\n");
         System.out.println("----Index files----");
         List<Archivo> indexfiles = this.indexZone.getFilesZone();
         for(int i = 0; i < indexfiles.size() ;i++){
             System.out.println(indexfiles.get(i).nombre);
         }
+        System.out.println("\n");
         System.out.println("----LocalRepository----");
         List<Commit> local = this.localRepo.getCommits();
         for(int i = 0; i < local.size() ;i++){
             System.out.println(local.get(i).message);
         }
         System.out.println("----end----");
+        System.out.println("\n");
     }
     @Override
     public void addFileToworkingDirectory(Archivo file){

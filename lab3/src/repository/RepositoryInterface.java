@@ -4,7 +4,7 @@ import workingzone.WorkingZone;
 import archivo.Archivo;
 import repozone.RepoZone;
 
-public interface IRepository {
+public interface RepositoryInterface {
     String repoName = "";
     // working directory
     WorkingZone workingDirectory = new WorkingZone();

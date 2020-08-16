@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import archivo.Archivo;
 
-public class WorkingZone implements IWorkingZone {
+public class WorkingZone implements WorkingZoneInterface {
     private List<Archivo> files;
     
     public WorkingZone(){
