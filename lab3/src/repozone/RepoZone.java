@@ -20,5 +20,8 @@ public class RepoZone implements RepoZoneInterface {
     public List<Commit> getCommits(){
         return this.repo;
     }
+    public void clearZone(){
+        this.repo.clear();
+    }
 
 }

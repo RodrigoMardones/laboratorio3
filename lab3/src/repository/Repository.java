@@ -55,19 +55,48 @@ public class Repository implements RepositoryInterface{
 
     @Override
     public void gitPush() {        
-        //revisar si remote está vacia
-        if(this.remoteRepo.getCommits().size() == 0){
-            this.remoteRepo.add(this.localRepo.getCommits());
+        //revisar si remote esta vacia
+        List <Commit> remoteCommits = this.remoteRepo.getCommits();
+        List <Commit> localCommits = this.localRepo.getCommits();
+        if(localCommits.size() == 0){
+            System.out.println("Noy hay cambios locales para subir a remoto");
+            return;
+        }
+        if(remoteCommits.size() == 0){
+            this.remoteRepo.add(localCommits);
         }else{
-            
+            Commit lastLocal = localCommits.get(localCommits.size() - 1);
+            Commit lastRemote = remoteCommits.get(remoteCommits.size() -1);
+            // comparar los hash de tiempo
+            if(lastLocal.getHash() > lastRemote.getHash()){
+                this.remoteRepo.clearZone();
+                this.remoteRepo.add(this.localRepo.getCommits());
+            }else{
+                System.out.println("Remoto mas avanzado que local");
+            }
         }
 
     }
 
-    @Override
     public void gitPull() {
-        // TODO Auto-generated method stub
-
+        List <Commit> remoteCommits = this.remoteRepo.getCommits();
+        List <Commit> localCommits = this.localRepo.getCommits();
+        if(remoteCommits.size() == 0){
+            System.out.println("No hay cambios remotos para traer ");
+            return;
+        }
+        if(localCommits.size() == 0){
+            this.localRepo.add(remoteCommits);
+        }else{
+            Commit lastLocal = localCommits.get(localCommits.size() - 1);
+            Commit lastRemote = remoteCommits.get(remoteCommits.size() -1);
+            if(lastRemote.getHash() >= lastLocal.getHash()){
+                this.localRepo.clearZone();
+                this.localRepo.add(remoteCommits);
+            }else{
+                System.out.println("local mas avanzado que remoto");
+            }
+        }
     }
 
     @Override
@@ -89,6 +118,12 @@ public class Repository implements RepositoryInterface{
         List<Commit> local = this.localRepo.getCommits();
         for(int i = 0; i < local.size() ;i++){
             System.out.println(local.get(i).message);
+        }
+        System.out.println("\n");
+        System.out.println("----RemoteRepository----");
+        List<Commit> remote = this.remoteRepo.getCommits();
+        for(int i = 0; i < remote.size() ;i++){
+            System.out.println(remote.get(i).message);
         }
         System.out.println("----end----");
         System.out.println("\n");

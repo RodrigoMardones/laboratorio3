@@ -12,4 +12,5 @@ public interface CommitInterface {
     List<Archivo> files = new ArrayList<Archivo>();
     Long hash = Instant.now().getEpochSecond();
 
+    long getHash();
 }

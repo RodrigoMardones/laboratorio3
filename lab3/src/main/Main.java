@@ -39,6 +39,13 @@ public class Main {
                     String msg = in.nextLine();
                     git.gitCommit(msg);
                     break;
+                case 3:
+                    git.gitPull();
+                    break;
+                
+                case 4:
+                    git.gitPush();
+                    break;
                 
                 case 5:
                     git.gitStatus();
