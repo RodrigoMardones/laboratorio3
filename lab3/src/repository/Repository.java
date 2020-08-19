@@ -14,19 +14,29 @@ public class Repository implements RepositoryInterface{
     private RepoZone localRepo;
     private RepoZone remoteRepo;
     
-    
+    /**
+     * @param void
+     * @return intancia de repositorio
+     */
     public Repository(){
         this.workingDirectory = new WorkingZone();
         this.indexZone = new WorkingZone();
         this.localRepo = new RepoZone();
         this.remoteRepo = new RepoZone();
     }
-
+    /**
+     * @param newRepoName nombre del repo para inicializar
+     *
+     */
     public void gitInit(String newRepoName) {
         this.repoName = newRepoName;
     }
 
-    @Override
+    /**
+     * 
+     * @param void
+     * @return void, pasa los archivos del working directory al index
+     */
     public void gitAdd() {
         List<Archivo> workingFiles = this.workingDirectory.getFilesZone();
         if(workingFiles.size() == 0){
@@ -37,7 +47,10 @@ public class Repository implements RepositoryInterface{
         this.workingDirectory.clearZone();
     }
 
-    @Override
+    /**
+     * @param message recibe un mensaje para crear un commit y agregarlo Local Repository
+     * @return void
+     */
     public void gitCommit(String message) {
         if(this.workingDirectory.getFilesZone().size() > 0){
             System.out.println("hay cambios no confirmados !");
@@ -53,7 +66,12 @@ public class Repository implements RepositoryInterface{
         this.indexZone.clearZone();
     }
 
-    @Override
+    /**
+     * 
+     * @param void
+     * @return void, pasa los commits actualizados de local repository al remote repository
+     * 
+     */
     public void gitPush() {        
         //revisar si remote esta vacia
         List <Commit> remoteCommits = this.remoteRepo.getCommits();
@@ -78,7 +96,11 @@ public class Repository implements RepositoryInterface{
         }
 
     }
-
+    /**
+     * 
+     * @param void
+     * @return void, trae los cambios del remote repository al local repository
+     */
     public void gitPull() {
         List <Commit> remoteCommits = this.remoteRepo.getCommits();
         List <Commit> localCommits = this.localRepo.getCommits();
@@ -100,7 +122,12 @@ public class Repository implements RepositoryInterface{
             }
         }
     }
-
+    /**
+     * 
+     * @param void
+     * @return void, despliega en pantalla el estatus de todas las zonas de trabajo
+     * 
+     */
     public void gitStatus() {
         // tes para revisar estado de working directory
         System.out.println("----workingDirectory files----");
@@ -134,7 +161,12 @@ public class Repository implements RepositoryInterface{
         System.out.println("----end----");
         System.out.println("\n");
     }
-    @Override
+    /**
+     * 
+     * 
+     * @param file agrega un archivo al working directory para su trabajo dentro del area
+     * @return void
+     */
     public void addFileToworkingDirectory(Archivo file){
         this.workingDirectory.add(file);
     }

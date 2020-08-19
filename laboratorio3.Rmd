@@ -192,7 +192,7 @@ A continuación se listarán los requerimientos completados como resultado de la
 | gitAdd | si | 100% |
 | gitCommit | si | 100% |
 | gitPush | si | 100% |
-| gitPull | si | 50% |
+| gitPull | si | 75% |
 | gitStatus | si | 100% |
 | addFileToworkingDirectory | si | 100% |
 | separacion de espacios de trabajo | si | 100% |

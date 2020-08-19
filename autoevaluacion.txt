@@ -1,0 +1,16 @@
+requisitos funcionales
+gitInit : 1
+gitAdd  : 1
+gitCommit: 1
+gitPush : 0.75
+GitStatus: 1
+
+requisitos no funcionales
+
+documentacion por clase : 1
+solucion orientada a objetos: 1
+uso de java 8 y jdk 1.8 : 1
+historial de trabajo en git: 1
+diagrama de clases UML: 1
+organizacion y orden: 1
+principios de acomplamiento y cohesion: 1
