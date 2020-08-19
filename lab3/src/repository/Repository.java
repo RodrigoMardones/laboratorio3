@@ -9,10 +9,10 @@ import workingzone.WorkingZone;
 public class Repository implements RepositoryInterface{
 
     String repoName;
-    WorkingZone workingDirectory;
-    WorkingZone indexZone;
-    RepoZone localRepo;
-    RepoZone remoteRepo;
+    private WorkingZone workingDirectory;
+    private WorkingZone indexZone;
+    private RepoZone localRepo;
+    private RepoZone remoteRepo;
     
     
     public Repository(){
@@ -59,7 +59,7 @@ public class Repository implements RepositoryInterface{
         List <Commit> remoteCommits = this.remoteRepo.getCommits();
         List <Commit> localCommits = this.localRepo.getCommits();
         if(localCommits.size() == 0){
-            System.out.println("Noy hay cambios locales para subir a remoto");
+            System.out.println("Noy hay cambios locales para subir a remoto \n");
             return;
         }
         if(remoteCommits.size() == 0){
@@ -71,8 +71,9 @@ public class Repository implements RepositoryInterface{
             if(lastLocal.getHash() > lastRemote.getHash()){
                 this.remoteRepo.clearZone();
                 this.remoteRepo.add(this.localRepo.getCommits());
+                System.out.println("Push realizado con exito ! \n");
             }else{
-                System.out.println("Remoto mas avanzado que local");
+                System.out.println("Remoto mas avanzado que local \n");
             }
         }
 
@@ -82,7 +83,7 @@ public class Repository implements RepositoryInterface{
         List <Commit> remoteCommits = this.remoteRepo.getCommits();
         List <Commit> localCommits = this.localRepo.getCommits();
         if(remoteCommits.size() == 0){
-            System.out.println("No hay cambios remotos para traer ");
+            System.out.println("No hay cambios remotos para traer \n");
             return;
         }
         if(localCommits.size() == 0){
@@ -93,13 +94,13 @@ public class Repository implements RepositoryInterface{
             if(lastRemote.getHash() >= lastLocal.getHash()){
                 this.localRepo.clearZone();
                 this.localRepo.add(remoteCommits);
+                System.out.println("Pull realizado con exito ! \n");
             }else{
-                System.out.println("local mas avanzado que remoto");
+                System.out.println("local mas avanzado que remoto \n");
             }
         }
     }
 
-    @Override
     public void gitStatus() {
         // tes para revisar estado de working directory
         List<Archivo> workinfiles = this.workingDirectory.getFilesZone();

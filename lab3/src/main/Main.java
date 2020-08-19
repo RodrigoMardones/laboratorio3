@@ -14,6 +14,7 @@ public class Main {
     public static void main(final String[] args) {
 
         Repository git = new Repository();
+        Scanner val = new Scanner(System.in);
         do {
             System.out.println("### SIMULADOR DE GIT ###");
             System.out.println("Escoja su opcion: ");
@@ -23,10 +24,8 @@ public class Main {
             System.out.println("4. push");
             System.out.println("5. status");
             System.out.println("6. crear archivo");
-            System.out.println("0. salir");
-            Scanner val = new Scanner(System.in);
+            System.out.println("0. salir");  
             int option = val.nextInt();
-            
             switch(option){
                 case 1:
                     
@@ -61,6 +60,7 @@ public class Main {
                     break;
                      
                 case 0:
+                    val.close();
                     return;
 
                 default:

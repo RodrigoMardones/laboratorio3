@@ -57,8 +57,9 @@ La necesidad de mantener y producir software escalable, ordenado y mantenible du
 Para el problema en cuestión se requiere de una pieza de software que permita realizar las siguientes acciones dentro de un directorio de trabajo, independiente del trabajo realizado dentro de este:
 
 * Poder guardar cambios de un proyecto en cuestión, asociados a un espacio de trabajo y a un usuario.
-* Poder revisar, listar y mostrar los cambios guardados de un proyecto asociado
-* poder enviar y traer los cambios que se tienen guardados a un repositorio externo.
+* Poder revisar, listar y mostrar los cambios guardados de un proyecto asociado.
+* Poder enviar y traer los cambios que se tienen guardados a un repositorio externo.
+* Poder mostrar las zonas y sus diferentes estados dependiendo de la información contenida en estos.
 
 \newpage
 
@@ -88,9 +89,25 @@ Como ya mencionamos, su unidad principal son los "objetos", y la construcción o
 
 # Analisis del problema
 
+Para el problema en cuestion se han dispuesto de distintas zonas de trabajo las cuales consituyen un flujo ordenado y unidireccional. estás zonas corresponden a las siguientes:
+
+* WorkingDirectory: Espacio de trabajo donde agregaremos los archivos que queramos agregar como cambios en nuestro flujo de trabajo principal.
+* IndexZone: Espacio de trabajo donde se preparan los archivos que están listos para ser enviados al nuestra rama de trabajo y que cuentan como cambio oficial dentro de nuestro flujo de trabajo mencionado.
+* Local Repository: Espacio de trabajo donde se encuentran nuestros cambios locales, no compartidos con el equipo de trabajo en su totalidad.
+* Remote Repositoyry: Espacio de trabajo donde se guardan nuestros cambios globales, estos son compartidos en su totalidad por el equipo de trabajo que utiliza el espacio en cuestión.
+
+A su vez se define una unidad llamada "Commit", el commit es una entidad que contiene todos los archivos que asociados a un cambios dentro de nuestro trabajo, junto con un mensaje,meta datos y la información correspondiente a la persona que hizo este cambio. Estos commits solo se encuentran en dos espacios de trabajo los cuales son "Local Repository" y "Remote Repository". 
+
+A su vez se desprende la unidad de "Archivo", el "archivo" es la unidad de minima dentro de un commit y como su nombre lo indica es donde nosotros trabajamos y realizamos cambios en nuestro proyecto en cuestion.
+
+
 \newpage
 
 # Diseño de solución
+
+Para el diseño en cuestión tenemos el siguiente diagrama UML que muestra la relación entre nuestras clases:
+
+![](umlsolucion.png)
 
 \newpage
 

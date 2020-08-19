@@ -11,8 +11,8 @@ public class RepoZone implements RepoZoneInterface {
     public RepoZone(){
         this.repo = new ArrayList<Commit>();
     }
-    public void add(Commit c){
-        this.repo.add(c);
+    public void add(Commit commit){
+        this.repo.add(commit);
     }
     public void add(List<Commit> commits){
         this.repo.addAll(commits);
