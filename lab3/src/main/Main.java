@@ -28,16 +28,16 @@ public class Main {
             int option = val.nextInt();
             switch(option){
                 case 1:
-                    
                     git.gitAdd(); 
                     break;
-                
+
                 case 2:
                     System.out.println("ingrese un mensaje para su commit : ");
                     Scanner in = new Scanner(System.in);
                     String msg = in.nextLine();
                     git.gitCommit(msg);
                     break;
+
                 case 3:
                     git.gitPull();
                     break;
