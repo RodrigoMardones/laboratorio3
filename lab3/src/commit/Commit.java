@@ -2,9 +2,11 @@ package commit;
 
 import java.time.Instant;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import archivo.Archivo;
 
 public class Commit implements CommitInterface {
@@ -21,5 +23,10 @@ public class Commit implements CommitInterface {
     }
     public long getHash(){
         return this.hash;
+    }
+    public String commitInfo(){
+        DateFormat formatter = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+        String dateToString = formatter.format(this.created);
+        return message + ": creado el " + dateToString;
     }
 }

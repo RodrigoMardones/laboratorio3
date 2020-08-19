@@ -116,9 +116,13 @@ Para el diseño en cuestión tenemos el siguiente diagrama UML que muestra la re
 Tenemos 5 clases principales que implementan sus interfaces correspondientes para una mayor comprension entre el contrato que tienen con el diseño, estas son :
 
 * Archivo: Clase que representa un archivo de texto plano dentro de la simulación creada.
+
 * Commit : Clase que representa un cambio dentro de nuestro flujo del trabajo dentro de la simulación. Esta Contiene una Lista de Archivos ya actualizados o agregados en la rama de trabajo.
+
 * WorkingZone: Clase que tiene como objetivo representar las dos primeras estaciones de trabajo de la simulación. "WorkingDirectory" e "Index". Estas áreas solo manejan archivos entre sí y representan los estados de trabajo en progreso y teminado en la simulación.
+
 * RepoZone: Clase que tiene como objetivo representar las siguientes dos estaciones de trabajo de la simulación. "Local Respository" y "RemoteRepository". Estas áreas manejan los commits que se guardan como cambios en el flujo de trabajo de un proyecto. 
+
 *Repository : Clase principal que contiene a las otras zonas, permite agregar archivos al "workingDirectory", moverlos al "index", crear commits para el "local Repository" y subir los cambios al "Remote Repository", además de mostrarnos los estados de cada zona en cuestión.
 
 
@@ -150,7 +154,7 @@ A su vez todo el codigo fuente se concentra en el directorio "src" dentro del di
 
 * Scanner: utilizado para poder realizar el menú interactivo dentro de la simulación de la implementación y obtener los valores del menu creado.
 
-El proyecto fue creado en un equipo macOS, la que a su vez utilizó como base java version "1.8.0_111". Otros directorios y archivos como "nbproject" y build.xml forman parte del "ide" utilizado en primera instancia para trabajar en este proyecto pero no son requeridos del todo. 
+El proyecto fue creado en un equipo macOS, la que a su vez utilizó como base java version "1.8.0_111". Otros directorios y archivos como "nbproject" y build.xml forman parte del "ide" utilizado en primera instancia para trabajar en este proyecto pero no son requeridos para poder ejecutarlo. 
 
 \newpage
 
@@ -160,20 +164,67 @@ Para poder ejecutar el codigo de manera correcta se ha dispuesto de un script de
 
 Al inicializar este desplegará el menu solicitado para el proyecto, el cual acepta solo numeros enteros. cada numero representa una opcion mostrada ya por pantalla. el no seguir estas instrucciones puede llevar al malfuncionamiento o no ejecución de la simulación del todo. 
 
-Para salir de menera correcta del programa, solo se debe ingresar la opcion "0" cuando el menú del programa lo requiera.
+Las opciones para poder ejecutar el programa son:
+
+* opción n°1: realiza un gitAdd, agrega un elemento al index.
+
+* opción n°2: realiza un gitCommit, crea un commit para pasar los cambios al local repository.
+
+* opción n°3: realiza un gitPull. trayendo los cambios del Remote Repository al Local Repository.
+
+* opción n°4: realiza un gitPush. llevando los cambiios del Local Repository al Remote Repository.
+
+* opción n°5: realiza un gitStatus: mostrando el status de las distintas zonas de trabajo.
+
+* opción n°6: agregar un archivo al working directory.
+
+* opción n°0: terminar la ejecución del programa y salir de este.
 
 \newpage
 
-# Resultados y Autoevaluacion
+# Resultados y Autoevaluación
+
+A continuación se listarán los requerimientos completados como resultado de la creación de este simulación.
+
+| requerimiento | completado | grado de completacion |
+| -- | -- | -- |
+| gitInit | si | 100% |
+| gitAdd | si | 100% |
+| gitCommit | si | 100% |
+| gitPush | si | 100% |
+| gitPull | si | 50% |
+| gitStatus | si | 100% |
+| addFileToworkingDirectory | si | 100% |
+| separacion de espacios de trabajo | si | 100% |
+| Archivo class | si | 100% |
+| commmit Class | si | 100% |
+
+
+Para todos los casos anteriores se probaron creando instancias fuera del menu principal y realizando pruebas pequeñas en la medida de la construcción del software. El único caso no testeado de forma correcta es en gitPush. Cuando "Remote Repository" se encuentra en un estado mucho más avanzado que el LocalRepository, a pesar de que el código sí cuenta con la debida integración para que cubra de manera correcta ese caso.
+
+
 
 \newpage
 
 # Conclusiones
 
+Después de terminar con las pruebas correspondientes y ejecución del codigo podemos concluir que la pieza de software emula en su totalidad con lo requerido por el laboratorio en cuestión. Utilizando el paradigma de programcion orientado a objetos como marco de trabajo. Una vez analizado este informe, y tomando las indicaciones realizadas para poder ejecutar el programa. Se puede apreciar que el paradigma utilizado nos permite modelar de manera eficiente cada una de las partes que constituyen el problema explicado.
+
+A su vez el paradigma orientado a objetos nos permite reutilizar codigo, para las distintas zonas de trabajo, haciendo que este se vuelva mucho más eficiente y menos complejo de analisis para usuarios que requieran modificar el codigo fuente del mismo. Por otro lado, el lenguaje utilizado cuenta con herramientas que nos permitieron propias y bibliotecas especificas que nos ayudaron a extender de mejor manera la realización de algunas tareas importantes dentro de la ejecución de este programa.
+
+
+
+
 \newpage
 
 # Referencias
 
+Para la construcción de la pieza de software que hace referencia este informe, se utilizaron las siguientes fuentes bibliograficas:
 
+* Java OOP (Object-Oriented Programming). (s. f.). w3school. https://www.w3schools.com/java/java_oop.asp
+
+* Essentials, Part 1, Lesson 1: Compiling Running a Simple Program. (s. f.). Oracle. https://www.oracle.com/java/technologies/compile.html
+
+* Schildt, Herbert. Java: The Complete Reference, Eleventh Edition. New York: McGraw-Hill Education, 2018.
 
 

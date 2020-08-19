@@ -103,28 +103,33 @@ public class Repository implements RepositoryInterface{
 
     public void gitStatus() {
         // tes para revisar estado de working directory
-        List<Archivo> workinfiles = this.workingDirectory.getFilesZone();
         System.out.println("----workingDirectory files----");
+        
+        List<Archivo> workinfiles = this.workingDirectory.getFilesZone();
+        System.out.println("cantidad de Archivos en Index: " + workinfiles.size());
         for(int i = 0; i < workinfiles.size() ;i++){
             System.out.println(workinfiles.get(i).nombre);
         }
         System.out.println("\n");
-        System.out.println("----Index files----");
+        System.out.println("----Index files----\n");
         List<Archivo> indexfiles = this.indexZone.getFilesZone();
+        System.out.println("cantidad de Archivos en Index: " + indexfiles.size());
         for(int i = 0; i < indexfiles.size() ;i++){
             System.out.println(indexfiles.get(i).nombre);
         }
         System.out.println("\n");
-        System.out.println("----LocalRepository----");
+        System.out.println("----LocalRepository----\n");
         List<Commit> local = this.localRepo.getCommits();
+        System.out.println("cantidad de commits en Local Repository: " + local.size());
         for(int i = 0; i < local.size() ;i++){
-            System.out.println(local.get(i).message);
+            System.out.println(local.get(i).commitInfo());
         }
         System.out.println("\n");
-        System.out.println("----RemoteRepository----");
+        System.out.println("----RemoteRepository----\n");
         List<Commit> remote = this.remoteRepo.getCommits();
+        System.out.println("cantidad de commits en Remote Repository: " + remote.size());
         for(int i = 0; i < remote.size() ;i++){
-            System.out.println(remote.get(i).message);
+            System.out.println(remote.get(i).commitInfo());
         }
         System.out.println("----end----");
         System.out.println("\n");
