@@ -13,4 +13,5 @@ public interface CommitInterface {
     Long hash = Instant.now().getEpochSecond();
 
     long getHash();
+    String commitInfo();
 }
